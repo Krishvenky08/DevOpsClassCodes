@@ -1,13 +1,4 @@
-
-
-
-
-
 pipeline{
-    tools{
-        jdk 'MyJava'
-        maven 'MyMaven'
-    }
 	agent any
       stages{
            stage('Checkout'){
@@ -44,14 +35,7 @@ pipeline{
                }
            }	
           }
-           stage('MetricCheck'){
-              
-              steps{
-                  sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
-              }
-              
-          }
-          stage('Package'){
+            stage('Package'){
 		  
               steps{
 		  
